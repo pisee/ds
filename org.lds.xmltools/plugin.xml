@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+	<!-- Project Popup Menu - DS Utils -->
+	<extension point="org.eclipse.ui.popupMenus">
+		<objectContribution
+			adaptable="true"
+			id="xmlTools"
+			objectClass="org.eclipse.core.resources.IFile">
+			<menu
+				id="xmlTools"
+				label="XML tools"
+				path="additions">
+				<separator name="xmlGroup"/>
+			</menu>
+		</objectContribution>
+	</extension>
+	
+	<!-- Project Popup Menu - Convert xml attribute menu -->
+	<extension point="org.eclipse.ui.popupMenus">
+		<objectContribution
+			adaptable="true"
+			id="org.eclipse.ui.articles.action.contribution.popup.object"
+			objectClass="org.eclipse.core.resources.IFile"
+			nameFilter="*.xml">
+			<filter name="projectNature" value="org.eclipse.jdt.core.javanature" />
+			<action
+				icon="icons/ds.gif"
+				id="org.lds.xmltools.action.ConvertXmlAttrubuteAction"
+				class="org.lds.xmltools.action.ConvertXmlAttrubuteAction"
+				label="Convert xml attributes"
+				menubarPath="xmlTools/xmlGroup">
+			</action>
+		</objectContribution>
+	</extension>
+
+	<!-- Project Popup Menu - Generate Excel from Xml file menu -->
+	<extension point="org.eclipse.ui.popupMenus">
+		<objectContribution
+			adaptable="true"
+			id="org.eclipse.ui.articles.action.contribution.popup.object"
+			objectClass="org.eclipse.core.resources.IFile"
+			nameFilter="*.xml">
+			<filter name="projectNature" value="org.eclipse.jdt.core.javanature" />
+			<action
+				icon="icons/ds.gif"
+				id="org.lds.xmltools.action.GenerateExcelAction"
+				class="org.lds.xmltools.action.GenerateExcelAction"
+				label="Generate Excel from XML"
+				menubarPath="xmlTools/xmlGroup">
+			</action>
+		</objectContribution>
+	</extension>
+</plugin>
