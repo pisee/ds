@@ -90,13 +90,13 @@ public class XmlParser {
 		}
 	}
 	
-	public void overwrite(){
+	public void write(String path){
 		try {
 			TransformerFactory transformerFactory = TransformerFactory.newInstance();
 			Transformer transformer;
 			transformer = transformerFactory.newTransformer();
 			DOMSource source = new DOMSource(document);
-			StreamResult result = new StreamResult(new File(xmlPath));
+			StreamResult result = new StreamResult(new File(path));
 			transformer.transform(source, result);
 		} catch (TransformerConfigurationException e) {
 			e.printStackTrace();

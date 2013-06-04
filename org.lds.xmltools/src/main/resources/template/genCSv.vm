@@ -1,0 +1,3 @@
+#foreach( $domObject in $domObjectList )
+$domObject.id,$domObject.text,$domObject.koName,$domObject.enName
+#end

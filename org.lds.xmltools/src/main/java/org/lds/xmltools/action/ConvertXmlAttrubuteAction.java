@@ -30,12 +30,12 @@ public class ConvertXmlAttrubuteAction implements IObjectActionDelegate {
 				}
 				XmlParser xmlParser = new XmlParser(path);
 				xmlParser.parse(xmlParser.getDocument().getDocumentElement(), true); 
-				xmlParser.overwrite();
+				xmlParser.write(path);
 				
 				MyVelocityEngine engine = new MyVelocityEngine();
 		        Map map = new HashMap();
 		        map.put("domObjectList", xmlParser.getObjList());
-		        String contents = engine.generate(map, "genCVS.vm", true);
+		        String contents = engine.generate(map, "genCSV.vm", true);
 		        System.out.println(contents);
 		        
 		        FileGenerator.generate(file, contents);
